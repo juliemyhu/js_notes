@@ -109,3 +109,37 @@ const half = (function() {
 
 console.log(stats)
 console.log(half(stats))
+
+
+//  Factory Function 
+function createCircle(radius) {
+    return {
+        radius,
+        draw: function() {
+            console.log ('draw')
+        }
+    };
+}
+const cirlce = createCircle(1)
+
+// Constructor Function
+function Circle(radius) {
+    this.radius = radius;
+    this.draw = function() {
+        console.log('draw');
+    }
+}
+const another = new Circle(1)
+
+
+var person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 50,
+    eyeColor: "blue"
+  };
+
+
+console.log(person.firstName);
+person['firstName'] = 'Julie';
+console.log(person.firstName);
