@@ -1,4 +1,5 @@
 function Stopwatch() {
+
     let startTime,endTime,running, duration = 0;
     this.start = function() {
         if (running)
@@ -6,6 +7,8 @@ function Stopwatch() {
         running = true;
 
         startTime = new Date();
+
+
     };
 
     this.stop = function() {
@@ -32,3 +35,13 @@ function Stopwatch() {
     });
 }
 
+function ageInDays() {
+    var birthYear = prompt('what year were you born?');
+    var calculateAge = (2021 - birthYear) * 365;
+    var h1 = document.createElement('h1');
+    var textAnswer = document.createTextNode('You are ' + calculateAge + ' days old')
+    h1.setAttribute('id','ageInDays');
+    h1.appendChild(textAnswer)
+    document.getElementById('flex-box-result').appendChild(h1)
+
+}

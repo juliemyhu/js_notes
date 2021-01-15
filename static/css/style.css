@@ -5,7 +5,7 @@
 .flex-box-container-1 {
     display:flex;
     border:1px solid black;
-    padding:10x;
+    padding:10px;
     flex-wrap:wrap;
     flex-direction: row;
     justify-content: space-around;
