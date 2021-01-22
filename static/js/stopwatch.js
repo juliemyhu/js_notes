@@ -46,8 +46,9 @@ function ageInDays() {
 
 }
 
-function createStopwatch() {
-    const sw = new Stopwatch();
+const sw = new Stopwatch()
+
+function createStopwatch(start) {
     sw.start();
     var h1 = document.createElement('h1');
     var textAnswer = document.createTextNode('Timer: ' + sw.duration)
@@ -56,14 +57,8 @@ function createStopwatch() {
     document.getElementById('flex-box-result').appendChild(h1)
 }
 
-function createStopwatch() {
-    const sw = new Stopwatch();
-    sw.start();
-    var h1 = document.createElement('h1');
-    var textAnswer = document.createTextNode('Timer: ' + sw.duration)
-    h1.setAttribute('id','ageInDays');
-    h1.appendChild(textAnswer)
-    document.getElementById('flex-box-result').appendChild(h1)
+function stopStopwatch(sw) {
+return sw.stop
 }
 
 // Rock, Paper, Scissors
@@ -134,4 +129,24 @@ function rpsFrontEnd(humanImageChoice, botImageChoice, finalMessage) {
     document.getElementById('flex-box-rps-div').appendChild(messageDiv);
     document.getElementById('flex-box-rps-div').appendChild(botDiv);
 
+}
+
+var all_buttons = document.getElementsByTagName('button');
+console.log(all_buttons);
+
+var copyAllButtons = [];
+for (let i=0; i < all_buttons.length; i++) {
+    copyAllButtons.push(all_buttons[i])
+}
+
+function buttonColorChange(buttonThingy) {
+    if (buttonThingy.value === 'red') {
+        buttonRed();
+    } else if (buttonThingy.value === 'green') {
+        buttonsGreen();
+    } else if (buttonThingy.value === 'reset'){
+        buttonColorReset();
+    } else if (buttonThingy.value === 'random') {
+        randomColors();
+    }
 }
